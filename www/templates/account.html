@@ -1,0 +1,12 @@
+<ion-view view-title="Account">
+  	<ion-content>
+		<span ng-show="check.email">
+		  {{ check.email }} | <a href="#" ng-click="logout()">Logout</a>
+		</span>
+		<br>
+		<h1>Reset Password</h1>
+	  	Old Password: <input type="password" ng-model="reset.oldPassword">
+	  	New Password: <input type="password" ng-model="reset.newPassword">
+	  	<button ng-click="resetPassword()">Reset Password</button>
+	</ion>
+</ion>
