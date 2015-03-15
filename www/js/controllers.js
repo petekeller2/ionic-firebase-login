@@ -9,6 +9,18 @@ angular.module('starter.controllers', [])
 	    var ref = new Firebase("https://your.firebaseio.com");
 	    $scope.authObj = $firebaseAuth(ref);
 
+	    $scope.facebook=function()
+	    {
+	    	$scope.authObj.$authWithOAuthPopup("facebook").then(function(authData) {
+			  console.log("Logged in as:", authData);
+			  $rootScope.check = {};
+			  $rootScope.check.facebook = authData.facebook.displayName;
+			  console.log("facebook name ", $rootScope.check.facebook);
+			}).catch(function(error) {
+			  console.error("Authentication failed:", error);
+			});
+	    }
+
 		$scope.forgot=function()
 		{
 			$scope.authObj.$resetPassword({
@@ -64,6 +76,18 @@ angular.module('starter.controllers', [])
  		//database connection
 	    var ref = new Firebase("https://your.firebaseio.com");
 	    $scope.authObj = $firebaseAuth(ref);
+
+	    $scope.facebook=function()
+	    {
+	    	$scope.authObj.$authWithOAuthPopup("facebook").then(function(authData) {
+			  console.log("Logged in as:", authData);
+			  $rootScope.check = {};
+			  $rootScope.check.facebook = authData.facebook.displayName;
+			  console.log("facebook name ", $rootScope.check.facebook);
+			}).catch(function(error) {
+			  console.error("Authentication failed:", error);
+			});
+	    }
 
 		$scope.signup=function()
 		{
@@ -138,6 +162,7 @@ angular.module('starter.controllers', [])
 			$scope.authObj.$unauth();
 			$state.go('tab.home');//switch to home tab
 			$rootScope.check.email = null;//for ng show
+			$rootScope.check.facebook = null;
 		}
 	}
 ]);

@@ -5,7 +5,7 @@ navigation history that also transitions its views in and out.
 -->
 
 <!-- not logged in -->
-<ion-tabs ng-hide="check.email" class="tabs-icon-top tabs-positive">
+<ion-tabs ng-hide="check.email||check.facebook" class="tabs-icon-top tabs-positive">
 
   <!-- Login Tab -->
   <ion-tab title="Login" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/login">
@@ -25,7 +25,7 @@ navigation history that also transitions its views in and out.
 </ion-tabs>
 
 <!-- logged in -->
-<ion-tabs ng-show="check.email" class="tabs-icon-top tabs-positive">
+<ion-tabs ng-show="check.email||check.facebook" class="tabs-icon-top tabs-positive">
   
   <!-- Account Tab -->
   <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
